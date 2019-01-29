@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!--内容字体-->
+    <sys:Double x:Key="ContentFontSize">14</sys:Double>
+    <!--一级标题-->
+    <sys:Double x:Key="LittleFontSize">14</sys:Double>
+    <!--一级标题-->
+    <sys:Double x:Key="Header1FontSize">20</sys:Double>
+    <!--18字体-->
+    <sys:Double x:Key="FontSize_18">18</sys:Double>
+    <sys:Double x:Key="MenuFontSize">14</sys:Double>
+</ResourceDictionary>

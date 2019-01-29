@@ -1,0 +1,78 @@
+﻿<Window x:Class="Inspur.Billing.View.Login.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:Inspur.Billing.View.Login"
+        xmlns:helper="clr-namespace:CommonLib.Helper;assembly=CommonLib"
+        mc:Ignorable="d" Name="login"
+        Title="Login" Height="400" Width="602" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True"
+        DataContext="{Binding Path=Login, Source={StaticResource Locator}}" ResizeMode="CanMinimize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <!--登录输入框背景图片样式-->
+            <Style x:Key="LogInImageStyle" TargetType="Image">
+                <Setter Property="Width" Value="195"/>
+                <Setter Property="Height" Value="31"/>
+                <Setter Property="Margin" Value="0,5"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+            </Style>
+            <!--登录输入框样式-->
+            <Style x:Key="LogInTextBoxStyle" TargetType="TextBox">
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Width" Value="145"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Margin" Value="45,0,0,0"/>
+                <Setter Property="FontSize" Value="{StaticResource ContentFontSize}"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" 
+                                   CommandParameter="{Binding ElementName=login}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Border BorderBrush="#FF45B9F1" BorderThickness="1">
+        <Grid Grid.Column="1" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Image Grid.RowSpan="1" Grid.ColumnSpan="3" Stretch="Fill" Source="/Inspur.Billing;component/Images/login_bg1.png"/>
+            <Button Grid.Column="2" Width="30" Height="30" Style="{DynamicResource CloseButtonStyle}" Click="Button_Click"/>
+            <!--<TextBlock Grid.Column="1" Text="POS Invoice Issue System" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource H_C_TitleTbkStyle}"/>-->
+            <Grid Grid.Row="1" Grid.Column="1" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="User Name:" Style="{StaticResource BaseContentTbkStyle}"/>
+                <Image Grid.Row="0" Grid.Column="1" Source="/Inspur.Billing;component/Images/login_edit2.png" Style="{StaticResource LogInImageStyle}"/>
+                <TextBox Grid.Column="1" Text="{Binding UserName}" Style="{StaticResource LogInTextBoxStyle}" Margin="45,0,0,0" VerticalAlignment="Center" Padding="0,3"/>
+                <TextBlock Grid.Row="1" Text="Password:" Style="{StaticResource BaseContentTbkStyle}"/>
+                <Image Grid.Row="2" Grid.Column="1" Source="/Inspur.Billing;component/Images/login_edit3.png" Style="{StaticResource LogInImageStyle}"/>
+                <PasswordBox Grid.Row="1" Grid.Column="1" helper:PasswordBoxAttach.IsPasswordBindingEnabled="True"  VerticalAlignment="Center" Padding="0,3"
+                         helper:PasswordBoxAttach.BindedPassword="{Binding Password,Mode=TwoWay}"
+                             Margin="45,0,0,0" BorderThickness="0" Width="145"/>
+            </Grid>
+            <Button Content="Login" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Command="{Binding LoginCommand}"
+                    Style="{StaticResource MetroFlatButton}" Height="40"/>
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="3" Text="V1.1" Margin="0,0,80,0"/>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA1051BF-826C-47AF-857A-161FF0622943}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Inspur.Billing</RootNamespace>
+    <AssemblyName>Inspur.Billing</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="JumpKick.HttpLib, Version=2.0.16.74, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HttpLib.2.0.16.74\lib\net45\JumpKick.HttpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="linq2db, Version=1.10.0.0, Culture=neutral, PublicKeyToken=f19f8aed7feff67e, processorArchitecture=MSIL">
+      <HintPath>..\packages\linq2db.1.10.0\lib\net45\linq2db.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Reference\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.108.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.108.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commom\CommModel.cs" />
+    <Compile Include="Commom\Config.cs" />
+    <Compile Include="Commom\Const.cs" />
+    <Compile Include="Commom\DateTimeHelper.cs" />
+    <Compile Include="Commom\EntityAdapter.cs" />
+    <Compile Include="Commom\Printer.cs" />
+    <Compile Include="Commom\ServiceHelper.cs" />
+    <Compile Include="Commom\TaxCalculation.cs" />
+    <Compile Include="LinqToDB.Templates\CopyMe.SQLite1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CopyMe.SQLite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ErrorInfo.cs" />
+    <Compile Include="Model\CodeTable.cs" />
+    <Compile Include="Model\MonitoringInfo.cs" />
+    <Compile Include="Model\Service\Attention\AttentionRequest.cs" />
+    <Compile Include="Model\Service\Attention\AttentionResponse.cs" />
+    <Compile Include="Model\Service\LastSign\LastSignRequest.cs" />
+    <Compile Include="Model\Service\Pin\PinRequest.cs" />
+    <Compile Include="Model\Service\Pin\PinResponse.cs" />
+    <Compile Include="Model\Service\Sign\SignGoodItem.cs" />
+    <Compile Include="Model\Service\Sign\SignRequest.cs" />
+    <Compile Include="Model\Service\Sign\SignResponse.cs" />
+    <Compile Include="Model\Service\Sign\TaxItem.cs" />
+    <Compile Include="Model\Service\Statistics\PeriodicModel.cs" />
+    <Compile Include="Model\Service\Statistics\ReportRequest.cs" />
+    <Compile Include="Model\Service\Statistics\ReportResponse.cs" />
+    <Compile Include="Model\Service\Statistics\ReportTaxItems.cs" />
+    <Compile Include="Model\Service\Statistics\XReportModel.cs" />
+    <Compile Include="Model\Service\Statistics\ZReportModel.cs" />
+    <Compile Include="Model\Service\Status\StatusRequest.cs" />
+    <Compile Include="Model\Service\Status\StatusResponse.cs" />
+    <Compile Include="Model\TaxCategory.cs" />
+    <Compile Include="Model\TaxInfo.cs" />
+    <Compile Include="ViewModel\Issue\CreditViewModel.cs" />
+    <Compile Include="ViewModel\Issue\PrintViewModel.cs" />
+    <Compile Include="ViewModel\Login\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\Setting\OperationModeVm.cs" />
+    <Compile Include="ViewModel\Setting\ParameterSettingVm.cs" />
+    <Compile Include="ViewModel\Setting\PinViewModel.cs" />
+    <Compile Include="ViewModel\Setting\PrintSettingVm.cs" />
+    <Compile Include="ViewModel\Setting\SoftwareSettingVm.cs" />
+    <Compile Include="ViewModel\Setting\SystemTestVm.cs" />
+    <Compile Include="ViewModel\Setting\TaxPayerSettingVm.cs" />
+    <Compile Include="ViewModel\Statistics\XZPeriodicVm.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\Issue\AddGood.xaml.cs">
+      <DependentUpon>AddGood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Issue\CreditView.xaml.cs">
+      <DependentUpon>CreditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Issue\PrintView.xaml.cs">
+      <DependentUpon>PrintView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\OperationSettting.xaml.cs">
+      <DependentUpon>OperationSettting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\ParameterSetting.xaml.cs">
+      <DependentUpon>ParameterSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\PinView.xaml.cs">
+      <DependentUpon>PinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\PrintSetting.xaml.cs">
+      <DependentUpon>PrintSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\SoftwareSetting.xaml.cs">
+      <DependentUpon>SoftwareSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\SystemTest.xaml.cs">
+      <DependentUpon>SystemTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\TaxPayerSetting.xaml.cs">
+      <DependentUpon>TaxPayerSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Statistics\XZPeriodicView.xaml.cs">
+      <DependentUpon>XZPeriodicView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Issue\AddGood.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Issue\CreditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Issue\PrintView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Setting\OperationSettting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Setting\ParameterSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Setting\PinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Setting\PrintSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Setting\SoftwareSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Setting\SystemTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Setting\TaxPayerSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Statistics\XZPeriodicView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="LinqToDB.Templates\DataAnnotations.ttinclude" />
+    <None Include="LinqToDB.Templates\DataModel.ttinclude" />
+    <None Include="LinqToDB.Templates\EditableObject.ttinclude" />
+    <None Include="LinqToDB.Templates\Humanizer.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Access.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.DB2.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Firebird.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Informix.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.MySql.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Oracle.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.PostgreSQL.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SapHana.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SqlCe.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SQLite.Tools.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SQLite.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SqlServer.SqlTypes.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SqlServer.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Sybase.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Tools.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.ttinclude" />
+    <None Include="LinqToDB.Templates\MultipleFiles.ttinclude" />
+    <None Include="LinqToDB.Templates\NotifyDataErrorInfo.ttinclude" />
+    <None Include="LinqToDB.Templates\NotifyPropertyChanged.ttinclude" />
+    <None Include="LinqToDB.Templates\ObsoleteAttributes.ttinclude" />
+    <None Include="LinqToDB.Templates\PluralizationService.ttinclude" />
+    <None Include="LinqToDB.Templates\README.md" />
+    <None Include="LinqToDB.Templates\T4Model.ttinclude" />
+    <None Include="LinqToDB.Templates\Validation.ttinclude" />
+    <Resource Include="Images\System\TestNoraml.png" />
+    <Resource Include="Images\System\TestPressed.png" />
+    <Resource Include="Images\Statistics\ReportNormal.png" />
+    <Resource Include="Images\Statistics\ReportPressed.png" />
+    <Resource Include="Images\System\PrintSetNormal.png" />
+    <Resource Include="Images\System\PrintSetPressed.png" />
+    <Resource Include="Images\System\OperationModeNormal.png" />
+    <Resource Include="Images\System\OperationModePressed.png" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NLog.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\Contentbg.jpg" />
+    <Resource Include="Images\login_bg1.png" />
+    <Resource Include="Images\login_edit2.png" />
+    <Resource Include="Images\login_edit3.png" />
+    <Resource Include="Images\Home\Contentbg.jpg" />
+    <Resource Include="Images\Home\inlogo.png" />
+    <Resource Include="Images\Home\in_but1_1.png" />
+    <Resource Include="Images\Home\in_but1_11.png" />
+    <Resource Include="Images\Home\in_but1_2.png" />
+    <Resource Include="Images\Home\in_but2_1.png" />
+    <Resource Include="Images\Home\in_but2_2.png" />
+    <Resource Include="Images\Home\in_but3_1.png" />
+    <Resource Include="Images\Home\in_but3_2.png" />
+    <Resource Include="Images\Home\in_but4_1.png" />
+    <Resource Include="Images\Home\in_but4_2.png" />
+    <Resource Include="Images\Home\offline.png" />
+    <Resource Include="Images\Home\online.png" />
+    <Resource Include="Images\Home\yh_tx1.png" />
+    <Resource Include="Images\Home\zjmleftbj.png" />
+    <Resource Include="Images\LogIn\login_bg1.jpg" />
+    <Resource Include="Images\LogIn\login_edit2.png" />
+    <Resource Include="Images\LogIn\login_edit3.png" />
+    <Resource Include="Images\LogIn\login_exit1.png" />
+    <Resource Include="Images\LogIn\login_exit2.png" />
+    <Resource Include="Images\LogIn\login_ok1.png" />
+    <Resource Include="Images\LogIn\login_ok2.png" />
+    <Resource Include="Images\Product\cd_spgl0.png" />
+    <Resource Include="Images\Product\cd_spgl1.png" />
+    <Resource Include="Images\Product\cd_spgl2.png" />
+    <Resource Include="Images\Product\spgl_spkc1.png" />
+    <Resource Include="Images\Product\spgl_spkc2.png" />
+    <Resource Include="Images\Product\spgl_spxg1.png" />
+    <Resource Include="Images\Product\spgl_spxg2.png" />
+    <Resource Include="Images\Product\spgl_spxx1.png" />
+    <Resource Include="Images\Product\spgl_spxx2.png" />
+    <Resource Include="Images\Issuing\issuePressed.png" />
+    <Resource Include="Images\Issuing\IssuNormal.png" />
+    <Resource Include="Images\Issuing\saleMouseOver.png" />
+    <Resource Include="Images\Issuing\saleNormal.png" />
+    <Resource Include="Images\Issuing\SalePressed.png" />
+    <Resource Include="Images\Management\CofigNormal.png" />
+    <Resource Include="Images\Management\ConfigMouseOver.png" />
+    <Resource Include="Images\Management\ConfigPressed.png" />
+    <Resource Include="Images\Statistics\StatisticsMouseOver.png" />
+    <Resource Include="Images\Statistics\StatisticsNormal.png" />
+    <Resource Include="Images\Statistics\StatisticsPressed.png" />
+    <Resource Include="Images\System\ParamSettingNormal.png" />
+    <Resource Include="Images\System\ParamSettingPressed.png" />
+    <Resource Include="Images\System\SettingMouseover.png" />
+    <Resource Include="Images\System\SettingNormal.png" />
+    <Resource Include="Images\System\SettingPressed.png" />
+    <Resource Include="Images\System\SoftNormal.png" />
+    <Resource Include="Images\System\SoftPressed.png" />
+    <Resource Include="Images\System\TaxPayerNormal.png" />
+    <Resource Include="Images\System\TaxPayerPressed.png" />
+    <Resource Include="Images\Issuing\PrintNormal.png" />
+    <Resource Include="Images\Issuing\PrintPressed.png" />
+    <Content Include="LinqToDB.Templates\CopyMe.SQLite.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CopyMe.SQLite1.generated.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Logo.ico" />
+    <Resource Include="LinqToDB.Templates\CopyMe.SQLite.tt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLib.Net\CommonLib.Net.csproj">
+      <Project>{54c98be9-3c0a-42f0-a54c-c73ac03bdac4}</Project>
+      <Name>CommonLib.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLib.Sqlite\CommonLib.Sqlite.csproj">
+      <Project>{e6234d00-11d9-4ac1-aefa-1b99cb2c758c}</Project>
+      <Name>CommonLib.Sqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLib\CommonLib.csproj">
+      <Project>{76cca2fb-6f61-4ed7-8799-601782bfbfb6}</Project>
+      <Name>CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlLib\ControlLib.csproj">
+      <Project>{baad91d9-8a2b-4540-bfdc-05d6ae602b20}</Project>
+      <Name>ControlLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inspur.TaxModel\Inspur.TaxModel.csproj">
+      <Project>{125f3a8a-dd95-412a-939b-ec533dd2487e}</Project>
+      <Name>Inspur.TaxModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>
